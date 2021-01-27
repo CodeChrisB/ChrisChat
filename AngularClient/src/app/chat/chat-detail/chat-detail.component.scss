@@ -13,20 +13,33 @@ $accent: mat-color($app-accent, A100);
   flex-direction: column;
   flex: 1;
 }
+.background{
+  background-image: url("https://cdn.hipwallpaper.com/i/60/39/9vsJ5D.png");
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
 
 .messages-list-container {
+  position: relative;
+  overflow-y: hidden;
 
-  justify-content: flex-start;
-  background-color: $accent;
-  background-image: url("https://cdn.hipwallpaper.com/i/60/39/9vsJ5D.png");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+}
+
+.bubble-container{
+  max-height: 79vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .scrollable {
   position: relative;
   padding: 16px;
 }
+
 
 .message-send {
  position: absolute;
