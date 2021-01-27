@@ -12,14 +12,14 @@
 
 #### All the chats
 
-![Screenshot](https://github.com/CodeChrisB/ChrisChat/blob/main/chats.PNG)
+![Screenshot](https://github.com/CodeChrisB/QuickDebugBackend/blob/main/chats.PNG)
 
 
 #### A single chat
 
-![Screenshot](https://github.com/CodeChrisB/ChrisChat/blob/main/chat.PNG)
+![Screenshot](https://github.com/CodeChrisB/QuickDebugBackend/blob/main/chat.PNG)
 
 
 #### All the contacts
 
-![Screenshot](https://github.com/CodeChrisB/ChrisChat/blob/main/contacts.PNG)
+![Screenshot](https://github.com/CodeChrisB/QuickDebugBackend/blob/main/contacts.PNG)
