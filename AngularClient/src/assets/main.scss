@@ -1,0 +1,23 @@
+html,body{
+  height: 100%;
+  background-color: #fafafa;
+}
+.lato * {
+  font-family: 'Lato' !important;
+}
+.mat-icon{
+  font-family: 'Material Icons' !important;
+}
+.full-width{
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.button{
+  cursor: pointer;
+}
+
+code {
+  white-space: pre-line;
+}

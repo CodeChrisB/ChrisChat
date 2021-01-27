@@ -1,0 +1,9 @@
+<div class="tab-container">
+  <nav mat-tab-nav-bar mat-stretch-tabs backgroundColor="primary">
+    <a mat-tab-link [routerLink]="link.url" *ngFor="let link of links" (click)="activeLink = link.url"
+       [active]="activeLink == link.url"> {{link.label}} </a>
+  </nav>
+  <div class="tab-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

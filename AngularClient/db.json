@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "targetUserId": 1,
+    "username": "Lackinger",
+    "cover": "https://robohash.org/velnondolores.jpg?size=50x50&set=set1",
+    "lastMessage": "Ja, das Frontend sieht ziemlich gut aus.",
+    "lastMessageLength": 1,
+    "chat": [
+      {
+        "id": "0",
+        "cover": "https://robohash.org/velnondolores.jpg?size=50x50&set=set1",
+        "message": "Sie können, mein Frontend auf meinem Github Account sehen!"
+      },
+      {
+        "id": "2",
+        "cover": "https://robohash.org/velnondolores.jpg?size=50x50&set=set1",
+        "message": "Wo genau?"
+      },
+      {
+        "id": "0",
+        "cover": "https://robohash.org/velnondolores.jpg?size=50x50&set=set1",
+        "message": "https://github.com/CodeChrisB/ChrisChat Unter diesem Link sehen sie mein Repo."
+      },
+      {
+        "id": "2",
+        "cover": "https://robohash.org/velnondolores.jpg?size=50x50&set=set1",
+        "message": "Ja, das Frontend sieht ziemlich gut aus. Gut gemacht Herr Buchberger"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "targetUserId": 4,
+    "username": "Auernig",
+    "cover": "https://robohash.org/velnondolores.jpg?size=50x50&set=set1",
+    "lastMessage": "Haben Sie das SYP Proposal schon abgegeben , Herr Buchberger?",
+    "lastMessageLength": 2,
+    "chat": [
+      {
+        "id": "4",
+        "cover": "https://robohash.org/velnondolores.jpg?size=50x50&set=set1",
+        "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      },
+      {
+        "id": "4",
+        "cover": "https://robohash.org/velnondolores.jpg?size=50x50&set=set1",
+        "message": "Haben Sie das SYP Proposal schon abgegeben , Herr Buchberger?"
+      }
+    ]
+  }
+]
