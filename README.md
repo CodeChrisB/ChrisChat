@@ -1,5 +1,12 @@
 # ChrisChat
 
+#Features
+
+- Chat with People
+- Contacts
+- Having a status
+- Seehow many new messages you got
+
 ## Checkout the Design
 
 - Download the Repo
