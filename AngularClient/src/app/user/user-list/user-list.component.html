@@ -1,3 +1,4 @@
+<input placeholder="Kontakt Suchen">
 <mat-nav-list>
   <ng-container *ngFor="let user of data; let lastItem = last;">
     <app-user-item [user]="user" (openSidebar)="openSidebar.emit($event)"></app-user-item>

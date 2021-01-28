@@ -6,6 +6,33 @@
   overflow: visible !important;
 }
 
+#main{
+  position: absolute;
+  top:0;
+  left:0vw;
+  width: 15vw;
+  max-height: 91vh;
+  min-height: 91vh;
+  overflow-y: auto;
+}
+#sidenav{
+  position: absolute;
+  top:0;
+  left:15vw;
+  max-width: 85vw;
+  min-width: 85vw;
+  max-height: 91vh;
+  min-height: 91vh;
+  overflow-y: auto;
+  background-color: lightblue;
+}
+
+.drawer-container{
+  position: absolute;
+}
+
+.mat-tab-label#contact{width: 10vw;}
+.mat-tab-label#chat{width: 10vw;}
 
 
 .sidebar {

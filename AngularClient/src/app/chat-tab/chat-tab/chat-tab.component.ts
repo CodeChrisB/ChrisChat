@@ -27,4 +27,11 @@ export class ChatTabComponent {
       this.me.sidebarTitles.chat = title;
     }
   };
+
+  trim(text:string,length:number){
+    return text.substring(0,length)
+  }
+
+
+
 }

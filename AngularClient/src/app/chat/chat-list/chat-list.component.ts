@@ -19,4 +19,5 @@ export class ChatListComponent implements OnInit {
   ngOnInit() {
     this.service.getChats();
   }
+
 }

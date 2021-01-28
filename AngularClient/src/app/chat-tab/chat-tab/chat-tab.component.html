@@ -1,9 +1,13 @@
 <mat-sidenav-container class="drawer-container" autosize>
-  <mat-tab-group mat-align-tabs="center">
-    <mat-tab label="Nachrichten">
+  <!---LEFT CONTACT LIST-->
+  <mat-tab-group id="sidenav" mat-align-tabs="center">
+    <mat-tab id="contact" label="Nachrichten">
       <app-chat-list (openChatSidebar)="open.chatSideBar($event)"></app-chat-list>
     </mat-tab>
-    <mat-tab label="Kontakte">
+  </mat-tab-group>
+  <!---RIGHT CHAT LIST-->
+  <mat-tab-group id="main" mat-align-tabs="left">
+    <mat-tab id="chat" label="Kontakte">
       <app-user-list (openUserSidebar)="open.userSideBar($event)"></app-user-list>
     </mat-tab>
   </mat-tab-group>

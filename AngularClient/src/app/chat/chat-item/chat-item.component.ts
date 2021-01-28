@@ -19,4 +19,14 @@ export class ChatItemComponent {
     this.service.chat.next(this.chat);
   }
 
+
+  trim(text:string,length:number){
+
+    if(text.length<=length)
+    return text; //length is ok
+
+    //text to long
+    return (text.substring(0,length-3) +"...")
+  }
+
 }
