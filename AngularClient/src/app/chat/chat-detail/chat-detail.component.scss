@@ -1,5 +1,5 @@
 @import '../../../../node_modules/@angular/material/theming';
-
+@import '~@ctrl/ngx-emoji-mart/picker';
 @include mat-core();
 
 $app-primary: mat-palette($mat-amber);
@@ -45,8 +45,8 @@ $accent: mat-color($app-accent, A100);
  position: absolute;
  bottom: 0;
  background-color: white;
- width: 100%;
- height: 12%;
+ width: 60%;
+ padding: 0px 20vw 0px 20vw;
 }
 
 .bubble {

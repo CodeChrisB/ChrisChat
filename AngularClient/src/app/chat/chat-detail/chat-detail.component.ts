@@ -3,7 +3,7 @@ import {Subscription} from "rxjs";
 import {ChatService} from "../chat.service";
 import {MessageControlService} from "../../core/services/message-control.service";
 import {ChatModel} from "../../core/models/chat";
-
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
 @Component({
   selector: 'app-chat-detail',
   templateUrl: './chat-detail.component.html',
@@ -14,9 +14,12 @@ export class ChatDetailComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   chat: ChatModel;
   sending: boolean = false;
+  showEmoji:boolean = false;
+  text:string;
+  emojis:string[] = ["😀", "😃", "😄", "😁", "😆" ,"😅", "😂" ]
 
-  constructor(private service: ChatService, private control: MessageControlService) {
-  }
+
+  constructor(private service: ChatService, private control: MessageControlService,) {}
 
   ngOnInit() {
     this.subscription = this.service.chat.subscribe(messages => {
@@ -44,5 +47,23 @@ export class ChatDetailComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+
+  emojiPickerDialog(){
+
+  }
+
+  addToText(emoji:string,$event){
+
+    $event.target.value +=emoji
+  }
+
+  animal: string;
+  name: string;
+
+
+  openDialog(): void {
+
   }
 }

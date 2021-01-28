@@ -6,7 +6,6 @@ import {MessageBubbleComponent} from './message-bubble/message-bubble.component'
 import {ChatService} from "./chat.service";
 import {ChatItemComponent} from './chat-item/chat-item.component';
 import {ChatDetailComponent} from './chat-detail/chat-detail.component';
-
 @NgModule({
   declarations: [ChatListComponent, MessageBubbleComponent, ChatItemComponent, ChatDetailComponent],
   exports: [
@@ -14,7 +13,7 @@ import {ChatDetailComponent} from './chat-detail/chat-detail.component';
     ChatDetailComponent
   ],
   imports: [
-    CoreModule
+    CoreModule,
   ],
   providers: [ChatService]
 })

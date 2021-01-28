@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import {
   MatBadgeModule,
   MatButtonModule,
@@ -30,6 +31,7 @@ import {StatusComponent} from "../components/status/status.component";
 @NgModule({
   declarations: [StatusComponent],
   imports: [
+    PickerModule,
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,

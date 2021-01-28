@@ -4,6 +4,8 @@ import {CoreModule} from "../core/modules/core.module";
 import {ChatTabModule} from "../chat-tab/chat-tab.module";
 import {UserModule} from "../user/user.module";
 import {AppRoutingModule} from "./app-routing.module";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,10 @@ import {AppRoutingModule} from "./app-routing.module";
     CoreModule,
     ChatTabModule,
     UserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   bootstrap: [AppComponent],
   providers: []
