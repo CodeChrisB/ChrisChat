@@ -27,6 +27,8 @@ import {
   MatGridListModule
 } from "@angular/material";
 import {StatusComponent} from "../components/status/status.component";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [StatusComponent],
@@ -82,7 +84,10 @@ import {StatusComponent} from "../components/status/status.component";
     MatOptionModule,
     MatSelectModule,
     MatSlideToggleModule,
-    StatusComponent
+    StatusComponent,
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: []
 })

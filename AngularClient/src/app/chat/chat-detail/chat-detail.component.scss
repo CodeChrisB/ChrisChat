@@ -40,7 +40,9 @@ $accent: mat-color($app-accent, A100);
   padding: 16px;
 }
 
-
+button {
+  width: 4vw;
+}
 .message-send {
  position: absolute;
  bottom: 0;

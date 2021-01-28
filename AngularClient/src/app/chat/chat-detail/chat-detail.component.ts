@@ -10,13 +10,13 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
   styleUrls: ['./chat-detail.component.scss']
 })
 export class ChatDetailComponent implements OnInit, OnDestroy {
-  @ViewChild("scrollable", {static: false}) scrollable;
+  @ViewChild("scrollable") scrollable;
   subscription: Subscription;
   chat: ChatModel;
   sending: boolean = false;
   showEmoji:boolean = false;
-  text:string;
-  emojis:string[] = ["😀", "😃", "😄", "😁", "😆" ,"😅", "😂" ]
+  text:string=""
+  emojis:string[] = ["✌","😂","😝","😁","😱","👉","🙌","🍻","🔥","🌈","☀","🎈","🌹","💄","🎀","⚽","🎾","🏁","😡","👿","🐻","🐶","🐬","🐟","🍀","👀","🚗","🍎","💝","💙","👌","❤","😍","😉","😓","😳","💪","💩","🍸","🔑","💖","🌟","🎉","🌺","🎶","👠","🏈","⚾","🏆","👽","💀","🐵","🐮","🐩","🐎","💣","👃","👂","🍓","💘","💜","👊","💋","😘","😜","😵","🙏","👋","🚽","💃","💎","🚀","🌙","🎁","⛄","🌊","⛵","🏀","🎱","💰","👶","👸","🐰","🐷","🐍","🐫","🔫","👄","🚲","🍉","💛","💚","🖕","👨‍💻","👩‍💻","🤵‍","💯","🏳️‍🌈"]
 
 
   constructor(private service: ChatService, private control: MessageControlService,) {}
@@ -41,7 +41,7 @@ export class ChatDetailComponent implements OnInit, OnDestroy {
       this.scrollToBottom();
       this.service.saveMessage(this.chat.id, value);
       this.sending = true;
-      $event.target.value = "";
+      this.text= "";
     }
   }
 
@@ -55,8 +55,7 @@ export class ChatDetailComponent implements OnInit, OnDestroy {
   }
 
   addToText(emoji:string,$event){
-
-    $event.target.value +=emoji
+   this.text +=emoji
   }
 
   animal: string;

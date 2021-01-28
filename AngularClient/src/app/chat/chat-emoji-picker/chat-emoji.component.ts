@@ -10,7 +10,7 @@ import {ChatModel} from "../../core/models/chat";
   styleUrls: ['./chat-emoji.component.scss']
 })
 export class ChatDetailComponent implements OnInit, OnDestroy {
-  @ViewChild("scrollable", {static: false}) scrollable;
+  @ViewChild("scrollable") scrollable;
   subscription: Subscription;
   chat: ChatModel;
   sending: boolean = false;

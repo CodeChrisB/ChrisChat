@@ -11,18 +11,14 @@
       </div>
     </div>
   </div>
-  <mat-icon>mode_edit</mat-icon>
   <div class="message-send mat-elevation-z8">
     <mat-form-field class="full-width">
       <input [(ngModel)]="text" type="text" matInput placeholder="Write a message" (keypress)="saveMessage($event)">
-      <mat-icon matSuffix>mode_edit</mat-icon>
+      <mat-icon matSuffix (click)="showEmoji =!showEmoji">sentiment_satisfied_alt</mat-icon>
     </mat-form-field>
-    <mat-icon matSuffix (click)="showEmoji =!showEmoji">sentiment_satisfied_alt</mat-icon>
     <div *ngIf="showEmoji">
-      <button *ngFor="let emoji of emojis" (click)="addToText(emoji,$event)" >{{emoji}}</button>
+      <button id="emojiButton" *ngFor="let emoji of emojis" (click)="addToText(emoji,$event)" >{{emoji}}</button>
     </div>
   </div>
-
-
-
 </div>
+

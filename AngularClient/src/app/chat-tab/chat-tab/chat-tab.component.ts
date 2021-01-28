@@ -9,8 +9,8 @@ import {MatSidenav} from "@angular/material";
 })
 export class ChatTabComponent {
 
-  @ViewChild("chatSidebar", {static: false}) chatSidebar: MatSidenav;
-  @ViewChild("userSidebar", {static: false}) userSidebar: MatSidenav;
+  @ViewChild("chatSidebar") chatSidebar: MatSidenav;
+  @ViewChild("userSidebar") userSidebar: MatSidenav;
   sidebarTitles = {
     user: "",
     chat: ""
