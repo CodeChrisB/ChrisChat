@@ -6,6 +6,7 @@
 - Contacts
 - Having a status
 - Seehow many new messages you got
+- Emoji Keyboard
 
 ## Checkout the Design
 
@@ -24,7 +25,7 @@
 
 #### A single chat
 
-![Screenshot](https://github.com/CodeChrisB/QuickDebugBackend/blob/main/chat.PNG)
+![Screenshot](https://github.com/CodeChrisB/QuickDebugBackend/blob/main/emojiChat.PNG)
 
 
 #### All the contacts
