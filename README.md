@@ -6,6 +6,7 @@
 - Contacts
 - Having a status
 - Seehow many new messages you got
+- Emoji Keyboard
 
 ## Checkout the Design
 
