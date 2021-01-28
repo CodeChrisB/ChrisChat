@@ -6,7 +6,16 @@
 
   .nav {
     z-index: 0;
+
   }
+}
+
+img#logo{
+  height: auto;
+  width: auto;
+  max-width:65px;
+  max-height: 50px;
+  margin:5px;
 }
 
 .tab-content {

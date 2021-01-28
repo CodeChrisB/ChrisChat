@@ -42,14 +42,36 @@ $accent: mat-color($app-accent, A100);
 
 button {
   width: 4vw;
+
+}
+button:hover{
+  background-color: gray;
+  border-color: gray;
+  max-height:20px;
+  min-height: fit-content;
 }
 .message-send {
  position: absolute;
  bottom: 0;
  background-color: white;
- width: 60%;
- padding: 0px 20vw 0px 20vw;
+ width: 70%;
+ padding: 0px 15vw 0px 15vw;
 }
+
+div#emojiKeyboard{
+  margin-bottom: 5px;
+  border: 5px solid black;
+  width: 97.24%;
+  max-height: 40vh;
+  overflow-y: auto;
+  background-color: grey;
+  border-radius: 50px;
+  padding-left: -20px;
+  align-items: center;
+  box-shadow: 5px 20px 15px #888888;
+}
+
+
 
 .bubble {
   $this: &;

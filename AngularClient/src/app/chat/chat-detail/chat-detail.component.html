@@ -8,15 +8,16 @@
           </ng-container>
         </ng-container>
         <mat-spinner diameter="24" color="warn" *ngIf="sending"></mat-spinner>
+        <div id="spacerForEmojiKeyboard" *ngIf="showEmoji"></div>
       </div>
     </div>
   </div>
   <div class="message-send mat-elevation-z8">
     <mat-form-field class="full-width">
       <input [(ngModel)]="text" type="text" matInput placeholder="Write a message" (keypress)="saveMessage($event)">
-      <mat-icon matSuffix (click)="showEmoji =!showEmoji">sentiment_satisfied_alt</mat-icon>
+      <mat-icon matSuffix (click)="toggleKeyboard()">sentiment_satisfied_alt</mat-icon>
     </mat-form-field>
-    <div *ngIf="showEmoji">
+    <div id="emojiKeyboard" *ngIf="showEmoji">
       <button id="emojiButton" *ngFor="let emoji of emojis" (click)="addToText(emoji,$event)" >{{emoji}}</button>
     </div>
   </div>

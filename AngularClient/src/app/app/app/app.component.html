@@ -1,5 +1,8 @@
 <div class="tab-container">
   <nav mat-tab-nav-bar mat-stretch-tabs backgroundColor="primary">
+    <a  href="https://github.com/CodeChrisB/ChrisChat">
+    <img id="logo" src="https://raw.githubusercontent.com/CodeChrisB/QuickDebugBackend/main/logo.png"/>
+    </a>
     <a mat-tab-link [routerLink]="link.url" *ngFor="let link of links" (click)="activeLink = link.url"
        [active]="activeLink == link.url"> {{link.label}} </a>
   </nav>
