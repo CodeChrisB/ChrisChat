@@ -24,7 +24,7 @@
 
 #### A single chat
 
-![Screenshot](https://github.com/CodeChrisB/QuickDebugBackend/blob/main/chat.PNG)
+![Screenshot](https://github.com/CodeChrisB/QuickDebugBackend/blob/main/emojiChat.PNG)
 
 
 #### All the contacts
