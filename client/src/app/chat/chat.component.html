@@ -1,4 +1,4 @@
-<button mat-fab (click)="onClickUserInfo()">
+<button (click)="onClickUserInfo()">
   <mat-icon>person</mat-icon>
 </button>
 
@@ -6,7 +6,11 @@
 <div class="chat-container">
   <mat-card class="main-card">
     <mat-list class="chat-list">
-      <mat-list-item *ngFor="let message of messages" [ngClass]="[(message.action === undefined && message.from.id === user.id)? 'me': 'you']">
+      <!--Last part checks who the content belongs to if mine then show it on the right site-->
+      <mat-list-item
+      *ngFor="let message of messages"
+      [ngClass]="getCssId(message)"
+      >
         <!--- Maybe add a image later on
         <img mat-list-avatar *ngIf="message.action === undefined" [src]="message.from.avatar">
         -->
@@ -17,12 +21,13 @@
           <span> {{message.content}}</span>
         </p>
 
-        <!---WILL Trigger when a user join or renames itself-->
+        <!---Trigger when a user join-->
         <p mat-line *ngIf="message.action === action.JOINED" class="chat-notification">
-          <span translate> <b>{{message.from.name}}</b> joined to the conversation. </span>
+          <span> <b>{{message.from.name}}</b> joined to the conversation. </span>
         </p>
+        <!---Trigger when a user  renames itself-->
         <p mat-line *ngIf="message.action === action.RENAME" class="chat-notification">
-          <span translate> <b>{{message.content.previousUsername}}</b> is now <b>{{message.content.username}}</b> </span>
+          <span> <b>{{message.content.previousUsername}}</b> is now <b>{{message.content.username}}</b> </span>
         </p>
       </mat-list-item>
     </mat-list>
@@ -34,11 +39,11 @@
       <mat-form-field class="chat-input">
         <input matInput
                #inputMessage
-               maxlength="140"
-               placeholder="{{'Type your message' | translate}}"
+               maxlength=100
+               placeholder="{{'Type your message'}}"
                [(ngModel)]="messageContent"
                (keyup.enter)="sendMessage(messageContent)">
-        <mat-hint align="end">{{inputMessage.value.length}}/140</mat-hint>
+        <mat-hint align="end">{{inputMessage.value.length+'/100'}}</mat-hint>
         <mat-icon matSuffix (click)="showEmojiKeyboard=!showEmojiKeyboard">sentiment_satisfied_alt</mat-icon>
       </mat-form-field>
       <div *ngIf="showEmojiKeyboard" id="emojiKeyboard" >

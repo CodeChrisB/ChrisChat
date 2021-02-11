@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, Validators } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
 import { StoreUserService } from '../shared/services/store-user.service';
 
 @Component({
@@ -15,11 +14,9 @@ export class DialogUserComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<DialogUserComponent>,
     @Inject(MAT_DIALOG_DATA) public params: any,
-    private translate: TranslateService,
     private storedUser: StoreUserService) {
     this.previousUsername = storedUser.getStoredUser() ? storedUser.getStoredUser() : (params.username ? params.username : undefined);
     this.usernameFormControl.setValue(storedUser.getStoredUser() ? storedUser.getStoredUser() : (params.username ? params.username : ""));
-    translate.setDefaultLang('en');
   }
 
   ngOnInit() {
@@ -33,8 +30,16 @@ export class DialogUserComponent implements OnInit {
     });
   }
 
-  switchLanguage(language: string) {
-    this.translate.use(language);
+  names:string[] = ["Jack27","JustCoffe","24Code","StudentLife","IWTKM","MickTheKing","JustEmy","ThatGuy19","Mario64","CSGuy","LotOfCode","PunchCancel","Faster11","ToHard","WutThis","FluffyUnicorn","GreenBaegle","YoloGuy","IceSlider","HelloWorld"]
+  public onRandomSave(): void {
+    let name = this.names[Math.floor(Math.random()*this.names.length)]
+    this.dialogRef.close({
+      username: name,
+      dialogType: this.params.dialogType,
+      previousUsername: this.previousUsername
+    });
   }
+
+
 
 }

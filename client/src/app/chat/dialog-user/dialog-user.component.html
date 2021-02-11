@@ -1,21 +1,23 @@
 <div class="row">
 <h2 class="dialog-title" mat-dialog-title>User Info</h2>
-
-
 </div>
 
 <mat-dialog-content class="dialog-content">
   <mat-form-field>
-    <input matInput name="username" placeholder="{{'Username' | translate}}"
+    <input matInput name="username" placeholder="{{'Username'}}"
           (keyup.enter)="onSave()" [formControl]="usernameFormControl" required>
     <mat-error >Field Required</mat-error>
     <mat-hint >Please type your username</mat-hint>
   </mat-form-field>
 </mat-dialog-content>
+<br>
+<button mat-button     (keyup.enter)="onRandomSave()"></button>
+
 
 <!--New User-->
 <mat-dialog-actions *ngIf="params?.typeDialog === 'new-user'" [attr.align]="'end'">
   <button mat-raised-button color="primary" mat-dialog-close (click)="onSave()" [disabled]="usernameFormControl.hasError('required')">Chat!</button>
+
 </mat-dialog-actions>
 <!--Edit User-->
 <mat-dialog-actions *ngIf="params?.typeDialog === 'edit-user'" [attr.align]="'end'">

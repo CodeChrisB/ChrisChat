@@ -9,11 +9,9 @@ import { User } from './shared/model/user';
 import { SocketService } from './shared/services/socket.service';
 import { DialogUserComponent } from './dialog-user/dialog-user.component';
 import { DialogUserType } from './dialog-user/dialog-user-type';
-import { TranslateService } from '@ngx-translate/core';
+
 import { StoreUserService } from './shared/services/store-user.service';
 
-
-const AVATAR_URL = 'https://api.adorable.io/avatars/285';
 
 @Component({
   selector: 'app-chat',
@@ -64,9 +62,8 @@ export class ChatComponent implements OnInit, AfterViewInit {
 
   constructor(private socketService: SocketService,
     private storedUser: StoreUserService,
-    public dialog: MatDialog, private translate: TranslateService) {
-    translate.setDefaultLang('en');
-  }
+    public dialog: MatDialog) {
+    }
 
   ngOnInit(): void {
     this.initModel();
@@ -96,7 +93,7 @@ export class ChatComponent implements OnInit, AfterViewInit {
     const randomId = this.getRandomId();
     this.user = {
       id: randomId,
-      avatar: `${AVATAR_URL}/${randomId}.png`
+      avatar: "" //maybe make it possible to input url to image
     };
   }
 
@@ -189,8 +186,20 @@ export class ChatComponent implements OnInit, AfterViewInit {
     this.socketService.send(message);
   }
 
-  switchLanguage(language: string) {
-    this.translate.use(language);
+
+  getCssId(message:Message){
+    //what we need
+    //me --> text on right side
+    //you --> text on left side
+    //action --> text centerd
+    let cssId=""
+    if(message.action===undefined)
+    {
+      cssId = message.from.id === this.user.id ? "me" : 'you'
+    }else{
+      cssId ="action"
+    }
+    return cssId;
   }
 
 }
