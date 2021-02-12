@@ -24,6 +24,6 @@ Open other command line window and run following commands:
 - Password❌
 - Encryption of chat❌
 - Diffrent ranks like an admin who can kick people out of the chat room❌
-
+- Chat to Pdf using PdfMake (I really would like to do that one)❌
 
 ### CodeChrisB
