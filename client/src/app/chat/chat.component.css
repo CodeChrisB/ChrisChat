@@ -53,9 +53,11 @@ div#emojiKeyboard{
   display: inline;
 }
 iframe{
-  height: fit-content;
-  width: fit-content;
-  overflow-y: hidden;
+  border: 0px;
+  overflow:hidden;
+  height:100%;
+  width:100%;
+  margin-bottom: 12px;
 }
 body{
   overflow-y: hidden;
@@ -70,7 +72,7 @@ mat-list-item{
     min-width: 10vw;
     display: block;
     width: 100%;
-    padding: 12px 12px;
+    padding: 12px 12px 12px 12px;
     overflow-y: hidden
     ;
   }

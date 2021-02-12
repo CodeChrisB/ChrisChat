@@ -30,7 +30,7 @@
 
           <!---Trigger when a media was posted-->
           <p mat-line *ngIf="message.action === action.MEDIA" class="chat-notification">
-            <iframe [src]="trustUrl(message.content)">  </iframe>
+            <iframe scrolling="no" [src]="trustUrl(message.content)">  </iframe>
           </p>
           <br>
           <div id=time *ngIf="(getCssId(message))!='action'">
