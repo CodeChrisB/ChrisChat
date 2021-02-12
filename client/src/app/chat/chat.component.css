@@ -41,11 +41,13 @@ div#emojiKeyboard{
   align-items: center;
   box-shadow: 5px 20px 15px #888888;
   overflow: hidden;
+  align-content: center;
 }
 
 #emojiButton{
-  min-width: 2vw;
+  min-width:fit-content;
   max-width: 2vw;
+  display: inline;
 }
 
 
@@ -53,7 +55,6 @@ mat-list-item{
     margin-top: 2px;
     margin-bottom: 2px;
     border-radius: 5px;
-    background-color: #E8EAF6;
     height: fit-content;
     min-width: 10vw;
     display: block;
@@ -67,6 +68,7 @@ mat-list-item{
   background-color: #25d366;
 }
 .you{
+  background-color: rgb(216, 214, 214);
   margin-right: 50%;
   float: left;
   width: fit-content;
@@ -76,8 +78,17 @@ mat-list-item{
   float:inline-start;
   margin: 4px 25%;
   width: 50%;
-
 }
+
+
+div#time{
+  font-size: smaller;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+
 
 .main-card {
     height: 100%;

@@ -4,11 +4,11 @@ import * as http from "http";
 import { Message } from "./model";
 
 export class ChatServer {
-  public static readonly PORT:number = 8080;
-  private app: express.Application;
-  private server: http.Server;
-  private io: SocketIO.Server;
-  private port: string | number;
+  public static readonly PORT:number = 8080; //set the port to 8080
+  private app: express.Application;   //the app we gonna use
+  private server: http.Server; //the server
+  private io: SocketIO.Server; //the connection
+  private port: string | number; //the port
 
   constructor() {
     this.createApp();

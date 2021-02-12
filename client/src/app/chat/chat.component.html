@@ -8,9 +8,8 @@
     <mat-list class="chat-list">
       <div id=messageContainer  *ngFor="let message of messages">
         <mat-list-item
-        [ngClass]="getCssId(message)"
-        >
-          <!--- Maybe add a image later on
+        [ngClass]="getCssId(message)"> <!--Content Align Css-->
+         <!--- Maybe add a image later on
           <img mat-list-avatar *ngIf="message.action === undefined" [src]="message.from.avatar">
           -->
           <h4 mat-line *ngIf="message.action === undefined">
@@ -22,13 +21,16 @@
 
           <!---Trigger when a user join-->
           <p mat-line *ngIf="message.action === action.JOINED" class="chat-notification">
-            <span> <b>{{message.from.name}}</b> joined to the conversation. </span>
+            <span> <b>{{message.from.name}}</b> joined the Chat! </span>
           </p>
           <!---Trigger when a user  renames itself-->
           <p mat-line *ngIf="message.action === action.RENAME" class="chat-notification">
-            <span> <b>{{message.content.previousUsername}}</b> is now <b>{{message.content.username}}</b> </span>
+            <span> <b>{{message.content.previousUsername}}</b> changed their name to <b>{{message.content.username}}</b> </span>
           </p>
           <br>
+          <div id=time *ngIf="(getCssId(message))!='action'">
+          {{message.time}}
+          </div>
         </mat-list-item>
         <br>
       </div>
@@ -48,6 +50,7 @@
         <mat-hint align="end">{{inputMessage.value.length+'/100'}}</mat-hint>
         <mat-icon matSuffix (click)="showEmojiKeyboard=!showEmojiKeyboard">sentiment_satisfied_alt</mat-icon>
       </mat-form-field>
+      <!--Emoji Keyboard-->
       <div *ngIf="showEmojiKeyboard" id="emojiKeyboard" >
         <button id="emojiButton" *ngFor="let emoji of emojis" (click)="messageContent=messageContent+emoji" >{{emoji}}</button>
       </div>

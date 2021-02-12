@@ -17,6 +17,11 @@ export class SocketService {
     }
 
     public send(message: Message): void {
+      var d = new Date();
+      var n = d.toLocaleTimeString();
+      n = n.substring(0,n.length-3)
+      message.time =n;
+      console.log('[time]:'+n)
         this.socket.emit('message', message);
     }
 
