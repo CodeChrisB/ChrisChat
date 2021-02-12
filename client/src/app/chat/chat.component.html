@@ -6,30 +6,32 @@
 <div class="chat-container">
   <mat-card class="main-card">
     <mat-list class="chat-list">
-      <!--Last part checks who the content belongs to if mine then show it on the right site-->
-      <mat-list-item
-      *ngFor="let message of messages"
-      [ngClass]="getCssId(message)"
-      >
-        <!--- Maybe add a image later on
-        <img mat-list-avatar *ngIf="message.action === undefined" [src]="message.from.avatar">
-        -->
-        <h4 mat-line *ngIf="message.action === undefined">
-          <b>{{message.from.name}}</b>
-        </h4>
-        <p mat-line *ngIf="message.action === undefined">
-          <span> {{message.content}}</span>
-        </p>
+      <div id=messageContainer  *ngFor="let message of messages">
+        <mat-list-item
+        [ngClass]="getCssId(message)"
+        >
+          <!--- Maybe add a image later on
+          <img mat-list-avatar *ngIf="message.action === undefined" [src]="message.from.avatar">
+          -->
+          <h4 mat-line *ngIf="message.action === undefined">
+            <b>{{message.from.name}}</b>
+          </h4>
+          <p mat-line *ngIf="message.action === undefined">
+            <span> {{message.content}}</span>
+          </p>
 
-        <!---Trigger when a user join-->
-        <p mat-line *ngIf="message.action === action.JOINED" class="chat-notification">
-          <span> <b>{{message.from.name}}</b> joined to the conversation. </span>
-        </p>
-        <!---Trigger when a user  renames itself-->
-        <p mat-line *ngIf="message.action === action.RENAME" class="chat-notification">
-          <span> <b>{{message.content.previousUsername}}</b> is now <b>{{message.content.username}}</b> </span>
-        </p>
-      </mat-list-item>
+          <!---Trigger when a user join-->
+          <p mat-line *ngIf="message.action === action.JOINED" class="chat-notification">
+            <span> <b>{{message.from.name}}</b> joined to the conversation. </span>
+          </p>
+          <!---Trigger when a user  renames itself-->
+          <p mat-line *ngIf="message.action === action.RENAME" class="chat-notification">
+            <span> <b>{{message.content.previousUsername}}</b> is now <b>{{message.content.username}}</b> </span>
+          </p>
+          <br>
+        </mat-list-item>
+        <br>
+      </div>
     </mat-list>
 
 
