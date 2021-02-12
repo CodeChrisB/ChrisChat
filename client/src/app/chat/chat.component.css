@@ -73,8 +73,8 @@ mat-list-item{
     display: block;
     width: 100%;
     padding: 12px 12px 12px 12px;
-    overflow-y: hidden
-    ;
+    overflow-y: hidden;
+    color: white;
   }
 
 .me{
@@ -82,7 +82,22 @@ mat-list-item{
   float: right;
   width: fit-content;
   height: fit-content;
-  background-color: #25d366;
+  background-color: #128C7E;
+  color: white;
+}
+.me:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-left-color: #00aabb;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-right: -20px;
 }
 .you{
   background-color: rgb(216, 214, 214);
@@ -102,8 +117,8 @@ mat-list-item{
 div#time{
   font-size: smaller;
   position: absolute;
-  bottom: 5%;
-  right: 5%;
+  bottom: 5px;
+  right: 5px;
 }
 
 
@@ -139,3 +154,6 @@ div#time{
 #other{
   background-color: brown;
 }
+
+
+/*********Some copy paste html for the speech bubbles**********/

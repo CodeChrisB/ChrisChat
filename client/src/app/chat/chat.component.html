@@ -6,7 +6,7 @@
 <div class="chat-container">
   <mat-card class="main-card">
     <mat-list class="chat-list">
-      <div id=messageContainer  *ngFor="let message of messages">
+      <div id=messageContainer (click)="copyMessage(message.content)"  *ngFor="let message of messages">
         <mat-list-item
         [ngClass]="getCssId(message)"> <!--Content Align Css-->
          <!--- Maybe add a image later on

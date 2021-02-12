@@ -13,6 +13,7 @@ import { DialogUserType } from './dialog-user/dialog-user-type';
 import { StoreUserService } from './shared/services/store-user.service';
 import { DialogImageComponent } from './dialog-image/dialog-image.component';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -65,8 +66,13 @@ export class ChatComponent implements OnInit, AfterViewInit {
   constructor(private socketService: SocketService,
     private storedUser: StoreUserService,
     public dialog: MatDialog,
-    private sanitizer:DomSanitizer) {
+    private sanitizer:DomSanitizer,
+    private _snackBar: MatSnackBar) {
     }
+
+
+
+
 
 
 
@@ -225,6 +231,29 @@ export class ChatComponent implements OnInit, AfterViewInit {
 
   trustUrl(url:string):SafeUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
+  copyMessage(message:string):void{
+    if(message==undefined)
+    return; //we do not want to copy a action
+
+    //copying stuff to clipboard is weird in javascript you need
+    //to create a element on the website and copy from there.
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = message;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+
+      this._snackBar.open("Copied: \""+message+"\" to Clipboard", "Ok", {
+        duration: 2000,
+      });
   }
 
 }
