@@ -5,6 +5,7 @@ import { Message } from '../model/message';
 import { Event } from '../model/event';
 
 import * as socketIo from 'socket.io-client';
+import { Action } from '../model/action';
 
 const SERVER_URL = 'http://localhost:8080';
 
@@ -17,12 +18,14 @@ export class SocketService {
     }
 
     public send(message: Message): void {
-      var d = new Date();
-      var n = d.toLocaleTimeString();
-      n = n.substring(0,n.length-3)
-      message.time =n;
-      console.log('[time]:'+n)
+      message.time =this.getTimeString();
         this.socket.emit('message', message);
+    }
+
+    public sendMedia(message:Message):void{
+      message.time =this.getTimeString();
+      message.action = Action.MEDIA;
+      this.socket.emit('message', message);
     }
 
     public onMessage(): Observable<Message> {
@@ -35,5 +38,12 @@ export class SocketService {
         return new Observable<Event>(observer => {
             this.socket.on(event, () => observer.next());
         });
+    }
+
+    private getTimeString():string{
+      var d = new Date();
+      var n = d.toLocaleTimeString();
+      n = n.substring(0,n.length-3)
+      return n;
     }
 }

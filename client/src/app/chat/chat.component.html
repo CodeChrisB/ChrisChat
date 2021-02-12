@@ -15,7 +15,7 @@
           <h4 mat-line *ngIf="message.action === undefined">
             <b>{{message.from.name}}</b>
           </h4>
-          <p mat-line *ngIf="message.action === undefined">
+          <p mat-line *ngIf="message.action === undefined && message.action != action.MEDIA">
             <span> {{message.content}}</span>
           </p>
 
@@ -26,6 +26,11 @@
           <!---Trigger when a user  renames itself-->
           <p mat-line *ngIf="message.action === action.RENAME" class="chat-notification">
             <span> <b>{{message.content.previousUsername}}</b> changed their name to <b>{{message.content.username}}</b> </span>
+          </p>
+
+          <!---Trigger when a media was posted-->
+          <p mat-line *ngIf="message.action === action.MEDIA" class="chat-notification">
+            <iframe [src]="trustUrl(message.content)">  </iframe>
           </p>
           <br>
           <div id=time *ngIf="(getCssId(message))!='action'">
@@ -39,7 +44,6 @@
 
     <!---CHAT INPUT-->
     <div class="chat-footer-container">
-      <mat-icon>message</mat-icon>
       <mat-form-field class="chat-input">
         <input matInput
                #inputMessage
@@ -49,6 +53,7 @@
                (keyup.enter)="sendMessage(messageContent)">
         <mat-hint align="end">{{inputMessage.value.length+'/100'}}</mat-hint>
         <mat-icon matSuffix (click)="showEmojiKeyboard=!showEmojiKeyboard">sentiment_satisfied_alt</mat-icon>
+        <mat-icon matSuffix (click)="imageDialog()">insert_photo</mat-icon>
       </mat-form-field>
       <!--Emoji Keyboard-->
       <div *ngIf="showEmojiKeyboard" id="emojiKeyboard" >

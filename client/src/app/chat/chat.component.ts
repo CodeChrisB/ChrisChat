@@ -11,6 +11,8 @@ import { DialogUserComponent } from './dialog-user/dialog-user.component';
 import { DialogUserType } from './dialog-user/dialog-user-type';
 
 import { StoreUserService } from './shared/services/store-user.service';
+import { DialogImageComponent } from './dialog-image/dialog-image.component';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 
 @Component({
@@ -25,7 +27,7 @@ export class ChatComponent implements OnInit, AfterViewInit {
   messageContent: string="";
   ioConnection: any;
   storedUserName: string;
-  dialogRef: MatDialogRef<DialogUserComponent> | null;
+  dialogRef: MatDialogRef<any> | null;
   defaultDialogUserParams: any = {
     disableClose: true,
     data: {
@@ -62,8 +64,11 @@ export class ChatComponent implements OnInit, AfterViewInit {
 
   constructor(private socketService: SocketService,
     private storedUser: StoreUserService,
-    public dialog: MatDialog) {
+    public dialog: MatDialog,
+    private sanitizer:DomSanitizer) {
     }
+
+
 
   ngOnInit(): void {
     this.initModel();
@@ -95,6 +100,22 @@ export class ChatComponent implements OnInit, AfterViewInit {
       id: randomId,
       avatar: "" //maybe make it possible to input url to image
     };
+  }
+
+  imageDialog():void{
+    this.dialogRef = this.dialog.open(DialogImageComponent);
+    this.dialogRef.afterClosed().subscribe(paramsDialog => {
+      if (!paramsDialog) {
+        return;
+      }
+
+
+      this.socketService.sendMedia({
+        from: this.user,
+        content: paramsDialog.link
+      });
+
+    });
   }
 
   private initIoConnection(): void {
@@ -193,13 +214,17 @@ export class ChatComponent implements OnInit, AfterViewInit {
     //you --> text on left side
     //action --> text centerd
     let cssId=""
-    if(message.action===undefined)
+    if(message.action===undefined || message.action == Action.MEDIA)
     {
       cssId = message.from.id === this.user.id ? "me" : 'you'
     }else{
       cssId ="action"
     }
     return cssId;
+  }
+
+  trustUrl(url:string):SafeUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
 }

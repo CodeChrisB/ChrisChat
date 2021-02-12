@@ -1,0 +1,11 @@
+<div class="row">
+<h2 class="dialog-title" mat-dialog-title>Choose Media</h2>
+</div>
+
+<mat-dialog-content class="dialog-content">
+  <mat-form-field>
+    <input [(ngModel)]=link matInput name="username" placeholder="Video or Image Link"
+          (keyup.enter)="onSave()">
+  </mat-form-field>
+</mat-dialog-content>
+<br>

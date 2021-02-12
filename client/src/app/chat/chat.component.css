@@ -1,4 +1,7 @@
 
+*{
+  overflow: hidden;
+}
 [mat-fab] {
     position: absolute;
     right: 2%;
@@ -49,22 +52,34 @@ div#emojiKeyboard{
   max-width: 2vw;
   display: inline;
 }
+iframe{
+  height: fit-content;
+  width: fit-content;
+  overflow-y: hidden;
+}
+body{
+  overflow-y: hidden;
+}
 
 
 mat-list-item{
     margin-top: 2px;
     margin-bottom: 2px;
     border-radius: 5px;
-    height: fit-content;
+    height: auto;
     min-width: 10vw;
     display: block;
     width: 100%;
+    padding: 12px 12px;
+    overflow-y: hidden
+    ;
   }
 
 .me{
   margin-left: 50%;
   float: right;
   width: fit-content;
+  height: fit-content;
   background-color: #25d366;
 }
 .you{
@@ -72,6 +87,7 @@ mat-list-item{
   margin-right: 50%;
   float: left;
   width: fit-content;
+  height: fit-content;
 }
 
 .action{
