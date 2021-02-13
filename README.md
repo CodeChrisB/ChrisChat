@@ -25,5 +25,13 @@ Open other command line window and run following commands:
 - Encryption of chat❌
 - Diffrent ranks like an admin who can kick people out of the chat room❌
 
+# What the Chat looks like
+![Pdf View](https://raw.githubusercontent.com/CodeChrisB/QuickDebugBackend/main/realChat.PNG)
 
-### CodeChrisB
+
+
+# What the downloaded PDF looks like
+![Pdf View](https://raw.githubusercontent.com/CodeChrisB/QuickDebugBackend/main/Chat.PNG)
+
+
+### By CodeChrisB
