@@ -69,6 +69,7 @@
         <mat-hint align="end">{{inputMessage.value.length+'/100'}}</mat-hint>
         <mat-icon matSuffix (click)="showEmojiKeyboard=!showEmojiKeyboard">sentiment_satisfied_alt</mat-icon>
         <mat-icon matSuffix (click)="imageDialog()">insert_photo</mat-icon>
+        <mat-icon matSuffix (click)="drawDialog()">edit</mat-icon>
       </mat-form-field>
       <!--Emoji Keyboard-->
       <div *ngIf="showEmojiKeyboard" id="emojiKeyboard" >

@@ -12,6 +12,7 @@ import { DialogUserType } from './dialog-user/dialog-user-type';
 
 import { StoreUserService } from './shared/services/store-user.service';
 import { DialogImageComponent } from './dialog-image/dialog-image.component';
+import { DialogCanvasComponent } from './dialog-canvas/dialog-user.component';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PdfMake } from 'src/service/pdf/pdfMake';
@@ -79,7 +80,6 @@ export class ChatComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.initModel();
-    // Using timeout due to https://github.com/angular/angular/issues/14748
     setTimeout(() => {
       this.openUserPopup(this.defaultDialogUserParams);
     }, 0);
@@ -92,8 +92,6 @@ export class ChatComponent implements OnInit, AfterViewInit {
     });
   }
 
-  // auto-scroll fix: inspired by this stack overflow post
-  // https://stackoverflow.com/questions/35232731/angular2-scroll-to-bottom-chat-style
   private scrollToBottom(): void {
     try {
       this.matList.nativeElement.scrollTop = this.matList.nativeElement.scrollHeight;
@@ -109,21 +107,7 @@ export class ChatComponent implements OnInit, AfterViewInit {
     };
   }
 
-  imageDialog():void{
-    this.dialogRef = this.dialog.open(DialogImageComponent);
-    this.dialogRef.afterClosed().subscribe(paramsDialog => {
-      if (!paramsDialog) {
-        return;
-      }
 
-
-      this.socketService.sendMedia({
-        from: this.user,
-        content: paramsDialog.link
-      });
-
-    });
-  }
 
   private initIoConnection(): void {
     this.socketService.initSocket();
@@ -260,6 +244,29 @@ export class ChatComponent implements OnInit, AfterViewInit {
   pdfDownload(){
     var pdfMake = new PdfMake(this.messages)
     pdfMake.download();
+  }
+
+  imageDialog():void{
+    this.dialogRef = this.dialog.open(DialogImageComponent);
+    this.dialogRef.afterClosed().subscribe(paramsDialog => {
+      if (!paramsDialog) {
+        return;
+      }
+
+
+      this.socketService.sendMedia({
+        from: this.user,
+        content: paramsDialog.link
+      });
+
+    });
+  }
+
+  drawDialog(){
+    this.dialogRef = this.dialog.open(DialogCanvasComponent);
+    this.dialogRef.afterClosed().subscribe(paramsDialog => {
+
+    });
   }
 
 }
