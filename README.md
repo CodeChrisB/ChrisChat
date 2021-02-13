@@ -19,11 +19,12 @@ Open other command line window and run following commands:
 # Features
 - Realtime Chat with many people ✔️
 - Register with a name and capable of chaning it✔️
-- Emoji Keyboard to use Emojis on PC (still need some css magic)✔️
-- Sending and displaying Images (Currently WIP)❌
+- Emoji Keyboard to use Emojis on PC (works but still need some css magic)✔️
+- Chat to Pdf using PdfMake ✔️
+- Sending and displaying Images (works but still need some css magic)✔️
 - Password❌
 - Encryption of chat❌
 - Diffrent ranks like an admin who can kick people out of the chat room❌
-- Chat to Pdf using PdfMake (I really would like to do that one)❌
+
 
 ### CodeChrisB
