@@ -265,7 +265,7 @@ export class ChatComponent implements OnInit, AfterViewInit {
   drawDialog(){
     this.dialogRef = this.dialog.open(DialogCanvasComponent);
     this.dialogRef.afterClosed().subscribe(paramsDialog => {
-
+        console.dir(paramsDialog)
     });
   }
 

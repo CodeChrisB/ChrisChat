@@ -19,8 +19,7 @@ export class DialogUserComponent implements OnInit {
     this.usernameFormControl.setValue(storedUser.getStoredUser() ? storedUser.getStoredUser() : (params.username ? params.username : ""));
   }
 
-  ngOnInit() {
-  }
+
 
   public onSave(): void {
     this.dialogRef.close({
@@ -28,6 +27,9 @@ export class DialogUserComponent implements OnInit {
       dialogType: this.params.dialogType,
       previousUsername: this.previousUsername
     });
+  }
+
+  ngOnInit() {
   }
 
   names:string[] = ["Jack27","JustCoffe","24Code","StudentLife","IWTKM","MickTheKing","JustEmy","ThatGuy19","Mario64","CSGuy","LotOfCode","PunchCancel","Faster11","ToHard","WutThis","FluffyUnicorn","GreenBaegle","YoloGuy","IceSlider","HelloWorld"]

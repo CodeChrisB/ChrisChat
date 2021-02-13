@@ -1,6 +1,7 @@
 import {
-  Component, Input, ElementRef, AfterViewInit, ViewChild
+  Component, Input, ElementRef, AfterViewInit, ViewChild, Inject
 } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { fromEvent } from 'rxjs';
 import { switchMap, takeUntil, pairwise } from 'rxjs/operators'
 
@@ -11,17 +12,35 @@ import { switchMap, takeUntil, pairwise } from 'rxjs/operators'
 })
 export class DialogCanvasComponent implements AfterViewInit {
 
+
+  //canvas drawing copied from here
+  //https://stackblitz.com/edit/angular-rxjs-canvas?file=src%2Fapp%2Fapp.component.css
   @ViewChild('canvas') public canvas: ElementRef;
-
-
   @Input() public width = 400;
   @Input() public height = 400;
+
+
+  constructor(public dialogRef: MatDialogRef<DialogCanvasComponent>,
+    @Inject(MAT_DIALOG_DATA) public params: any) {}
+
+
+
+  public onSave(): void {
+    this.dialogRef.close({
+      cx: this.cx,
+      canvas:this.canvas
+    });
+  }
+
 
 
   setColor(color:string){
     this.cx.strokeStyle = color;
   }
 
+  setStrokeWidth($event){
+    console.dir($event);
+  }
 
   private cx: CanvasRenderingContext2D;
 
@@ -83,7 +102,7 @@ export class DialogCanvasComponent implements AfterViewInit {
     this.cx.beginPath();
 
     if (prevPos) {
-      this.cx.moveTo(prevPos.x, prevPos.y); // from
+      this.cx.moveTo(prevPos.x, prevPos.y);
       this.cx.lineTo(currentPos.x, currentPos.y);
       this.cx.stroke();
     }

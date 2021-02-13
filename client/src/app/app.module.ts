@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChatModule } from './chat/chat.module';
 import { SharedModule } from './shared/shared.module';
-
+import {MatSliderModule} from '@angular/material/slider';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -27,6 +27,7 @@ import { MatMenuModule } from '@angular/material/menu';
     SharedModule,
     HttpClientModule,
     MatMenuModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
