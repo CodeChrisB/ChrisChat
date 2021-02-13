@@ -1,18 +1,24 @@
 <div class="row">
-<h2 class="dialog-title" mat-dialog-title>User Info</h2>
+<h2 class="dialog-title" mat-dialog-title>Log In</h2>
 </div>
 
 <mat-dialog-content class="dialog-content">
   <mat-form-field>
-    <input matInput name="username" placeholder="{{'Username'}}"
-          (keyup.enter)="onSave()" [formControl]="usernameFormControl" required>
+    <!--USERNAME-->
+   <input matInput name="username" placeholder="{{'Username'}}"
+           [formControl]="usernameFormControl" required>
     <mat-error >Field Required</mat-error>
-    <mat-hint >Choose your Name</mat-hint>
-  </mat-form-field>
+  </mat-form-field><br>
+  <mat-form-field>
+    <!--PASSWORD-->
+    <input matInput name="username" placeholder="{{'Login'}}"
+            [formControl]="usernameFormControl" required>
+     <mat-error >Field Required</mat-error>
+   </mat-form-field><br>
+   <!--LOGIN BUTTON-->
+   <button matInput name="username"
+   (click)="onSave()" >Login</button>
 </mat-dialog-content>
-<br>
-<button mat-button     (keyup.enter)="onRandomSave()"></button>
-
 
 <!--New User-->
 <mat-dialog-actions *ngIf="params?.typeDialog === 'new-user'" [attr.align]="'end'">
