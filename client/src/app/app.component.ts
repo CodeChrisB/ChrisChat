@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PdfMake } from 'src/service/pdf/pdfMake';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,7 @@ export class AppComponent implements OnInit {
 
   private initModel(): void {
   }
+
+
 
 }

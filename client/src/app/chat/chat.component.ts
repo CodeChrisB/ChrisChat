@@ -14,6 +14,7 @@ import { StoreUserService } from './shared/services/store-user.service';
 import { DialogImageComponent } from './dialog-image/dialog-image.component';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { PdfMake } from 'src/service/pdf/pdfMake';
 
 
 @Component({
@@ -254,6 +255,11 @@ export class ChatComponent implements OnInit, AfterViewInit {
       this._snackBar.open("Copied: \""+message+"\" to Clipboard", "Ok", {
         duration: 2000,
       });
+  }
+
+  pdfDownload(){
+    var pdfMake = new PdfMake(this.messages)
+    pdfMake.download();
   }
 
 }

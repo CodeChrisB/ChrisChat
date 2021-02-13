@@ -1,6 +1,21 @@
-<button (click)="onClickUserInfo()">
-  <mat-icon>person</mat-icon>
-</button>
+
+
+<!--TOOLBAR-->
+    <mat-toolbar style="background-color: #075e54">
+      <span>ChrisChat</span>
+      <div id=toolbar-right>
+        <!--Pdf-->
+        <button   matTooltip="Download the Chat as a pdf" id=toolbarButton (click)="pdfDownload()">
+          <mat-icon>download</mat-icon>
+        </button>
+        <!--User Edit-->
+        <button   matTooltip="" id=toolbarButton (click)="onClickUserInfo()">
+          <mat-icon>person</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+
+
 
 <!---CHAT HISTORY-->
 <div class="chat-container">
