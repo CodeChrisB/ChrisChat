@@ -4,8 +4,7 @@
 
 - npm install -g gulp-cli
 - npm install
-- gulp build
-- npm start
+- npm run server
 
 
 ## Angular Client
