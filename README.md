@@ -21,6 +21,7 @@ Open other command line window and run following commands:
 - Emoji Keyboard to use Emojis on PC (works but still need some css magic)✔️
 - Sending and displaying Images (works but still need some css magic)✔️
 - Chat to Pdf using PdfMake ✔️
+- Canvas Drawing and sent canvas ❌
 - Password❌
 - Encryption of chat❌
 - Diffrent ranks like an admin who can kick people out of the chat room❌
